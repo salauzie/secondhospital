@@ -1,0 +1,19 @@
+<h1>Meds</h1>
+
+<% @medications.each do |f| %>
+<%= f.name %>
+<br>
+<%= f.strength %>
+<br>
+<%= f.directions %>
+<br>
+<%= f.prescriber %>
+<br>
+<%= link_to "Edit", edit_medication_path(f) %>
+<%= link_to "Delete", medication_path(f), method: :delete %>
+<br>
+<br>
+<% end %>
+
+<%= link_to "Home", root_path %>
+<%= link_to "Add Medication", new_medication_path %>

@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-  resources :clinics
-  resources :patients
-  
+  resources :clinics do
+    resources :patients
+  end
   resources :medications
   resources :doctors
 

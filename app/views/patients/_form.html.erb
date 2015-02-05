@@ -1,0 +1,24 @@
+<%= form_for [@clinic, @patient] do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+  <br>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+  <br>
+  <%= f.label :date_of_birth %>
+  <%= f.date_field :date_of_birth, min: "1900-01-01", max: (Time.now) %>
+  <br>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <br>
+  <%= f.label :gender %>
+  <%= f.radio_button :gender, 'Female', :checked => true %>
+  <%= label :gender, 'Female' %>
+  <%= f.radio_button :gender, 'Male' %>
+  <%= label :gender, 'Male' %>
+  <br>
+  <%= f.label :blood_type %>
+  <%= f.select :blood_type, options_for_select(Patient::BLOOD_TYPE_OPTIONS, f.object.date_of_birth), include_blank: "--Choose option--" %>
+  <br>
+  <%= f.submit %>
+  <% end %>

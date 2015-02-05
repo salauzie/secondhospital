@@ -1,0 +1,14 @@
+<%= @clinic.name %>
+<br>
+<%= @clinic.facility_type %>
+<br>
+<%= @clinic.address %>
+<br>
+<%= @clinic.city %>
+<br>
+<%= @clinic.state %>
+<br>
+<%= link_to "Edit", edit_clinic_path%>
+<%= link_to "Delete", clinic_path, method: :delete %>
+<%= link_to "View Patients", clinic_patients_path(@clinic) %>
+<%= link_to "Add Patient", new_clinic_patient_path(@clinic) %>

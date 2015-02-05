@@ -1,0 +1,17 @@
+
+<%= @patient.first_name %>
+<br>
+<%= @patient.last_name %>
+<br>
+<%= @patient.date_of_birth %>
+<br>
+<%= @patient.description %>
+<br>
+<%= @patient.gender %>
+<br>
+<%= @patient.blood_type %>
+<br>
+<%= link_to "Edit", edit_clinic_patient_path %>
+<%= link_to "Delete", clinic_patient_path, method: :delete %>
+<br>
+<br>

@@ -1,0 +1,15 @@
+<%= form_for @medication do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<br>
+	<%= f.label :strength %>
+	<%= f.text_field :strength %>
+	<br>
+	<%= f.label :directions %>
+	<%= f.text_area :directions %>
+	<br>
+	<%= f.label :prescriber %>
+	<%= f.text_field :prescriber %>
+	<br>
+	<%= f.submit %>
+<% end %>
