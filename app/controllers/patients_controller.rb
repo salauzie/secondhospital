@@ -53,7 +53,13 @@ class PatientsController < ApplicationController
 		@patient = @clinic.patients.create patient_params
 		@doctors = @patient.doctors
 		@medications = @patient.medications
-		redirect_to clinic_patients_path
+		if @patient.save
+			flash[:notice] = 'Patient was added successfully.'
+			redirect_to clinic_patients_path
+		else 
+		flash[:error] = 'Patient add unsuccessful.'	
+		render :new
+		end
 	end	
 
 	def destroy
