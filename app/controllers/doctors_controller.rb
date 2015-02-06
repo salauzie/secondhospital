@@ -5,6 +5,7 @@ class DoctorsController < ApplicationController
 
 	def new
 		@doctor = Doctor.new
+
 	end
 
 	def edit
@@ -33,7 +34,9 @@ private
 		params.require(:doctor).permit(
 			:name,
 			:phone_number,
-			:specialty
+			:specialty,
+			doctor_ids: [],
+			clinic_ids: []
 			)
 	end
 

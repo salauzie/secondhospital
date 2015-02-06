@@ -1,0 +1,6 @@
+- @clinics.each do |f|
+  = link_to f.name, clinic_path(f)
+  %br/
+  %br/
+= link_to "Home", root_path
+= link_to "Add Clinic", new_clinic_path
