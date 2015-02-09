@@ -1,4 +1,8 @@
 %h1 Doctors
+= form_tag doctors_path, method: :get, role: "search" do
+  = text_field_tag 'q', params[:q], id: "srch-term", placeholder: "Search" 
+  = submit_tag "Search"
+%br
 - @doctors.each do |f|
   = f.name
   %br/

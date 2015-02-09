@@ -1,3 +1,7 @@
+= form_tag clinics_path, method: :get, role: "search" do
+  = text_field_tag 'q', params[:q], id: "srch-term", placeholder: "Search" 
+  = submit_tag "Search"
+
 - @clinics.each do |f|
   = link_to f.name, clinic_path(f)
   %br/

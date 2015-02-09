@@ -1,6 +1,13 @@
 class DoctorsController < ApplicationController
 	def index
 		@doctors = Doctor.all
+		@doctors = if !params[:q].blank?
+	    Doctor.where("name LIKE ?", "%#{params[:q]}%")
+	  else
+	    
+	    puts "Showing all Doctors"
+	    Doctor.all
+	  end
 	end	
 
 	def new
