@@ -15,13 +15,18 @@ class PatientsController < ApplicationController
 
 	def index
 		@clinic = Clinic.find params[:clinic_id]
-		@patients = @clinic.patients
-		@patients = if !params[:q].blank?
-      @clinic.patients.where("name LIKE ?", "%#{params[:q]}%")
-    else
-      puts "Showing all Patients"
-      @clinic.patients.all
-    end
+		# @patients = if !params[:q].blank?
+  #     @clinic.patients.where("name LIKE ?", "%#{params[:q]}%")
+  #   else
+  #     puts "Showing all Patients"
+  #     @clinic.patients.all
+  #   end
+  	@clinic_id = params[:clinic_id]
+  	@patients = @clinic.patients
+  	respond_to do |format|
+  		format.js
+  		format.html
+  	end	
 	end	
 
 	def new
@@ -111,6 +116,17 @@ class PatientsController < ApplicationController
     redirect_to clinic_patients_path
   end
 
+def search_results
+	@clinic = Clinic.find params[:clinic_id]
+	@clinic_id = params[:clinic_id]
+	@patients = Patient.where("first_name LIKE ? OR last_name LIKE ? OR description LIKE ? AND clinic_id = ?", "%#{params[:q]}%", "%#{params[:q]}%", "%#{params[:q]}%", "%#{params[:q]}%")
+	p @patients
+	respond_to do |format|
+		format.js
+		format.html
+	end
+end
+
 private
 	def set_patient
 		@patient = Patient.find(params[:id])
@@ -127,6 +143,7 @@ private
 			:workflow_state,
 			patient_ids: [],
 			doctor_ids: [],
+			clinic_ids: [],
 			medication_ids: []
 			)
 	end

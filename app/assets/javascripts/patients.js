@@ -14,3 +14,16 @@ $( ".form-control").blur(function() {
 });
 
 });
+$(document).on('click', '.search-patients', function() {
+	console.log("hospital");
+	clinic_id = $(".clinic-id").val()
+	var search = $(".patient-search").val()
+	$.ajax({
+		type: 'GET',
+		url: '/clinics/' + clinic_id + '/patients/search_results',
+		dataType: 'script',
+		data: {q: search}
+	});
+	console.log(search);
+	console.log(clinic_id);
+});
