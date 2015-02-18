@@ -27,3 +27,69 @@ $(document).on('click', '.search-patients', function() {
 	console.log(search);
 	console.log(clinic_id);
 });
+
+$(document).on('click', '.waiting', function() {
+	console.log("test")
+	var clinic_id = $(this).attr(".clinic-id")
+	var patient_id = $(this).attr(".patient-id")
+	$.ajax({
+		type: 'POST',
+		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/wait_patient'
+		dataType: 'script'
+	});
+});
+
+$(document).on('click', '.check-up', function() {
+	console.log("test")
+	var clinic_id = $(this).attr(".clinic-id")
+	var patient_id = $(this).attr(".patient-id")
+	$.ajax({
+		type: 'POST',
+		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/checkup_patient'
+		dataType: 'script'
+	});
+});
+
+$(document).on('click', '.x-ray', function() {
+	console.log("test")
+	var clinic_id = $(this).attr(".clinic-id")
+	var patient_id = $(this).attr(".patient-id")
+	$.ajax({
+		type: 'POST',
+		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/xray_patient'
+		dataType: 'script'
+	});
+});
+
+$(document).on('click', '.surgery', function() {
+	console.log("test")
+	var clinic_id = $(this).attr(".clinic-id")
+	var patient_id = $(this).attr(".patient-id")
+	$.ajax({
+		type: 'POST',
+		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/surgery_patient'
+		dataType: 'script'
+	});
+});
+
+$(document).on('click', '.leaving', function() {
+	console.log("test")
+	var clinic_id = $(this).attr(".clinic-id")
+	var patient_id = $(this).attr(".patient-id")
+	$.ajax({
+		type: 'POST',
+		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/leave_patient'
+		dataType: 'script'
+	});
+});
+
+$(document).on('click', '.billing', function() {
+	console.log("test")
+	var clinic_id = $(this).attr(".clinic-id")
+	var patient_id = $(this).attr(".patient-id")
+	$.ajax({
+		type: 'POST',
+		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/bills_patient'
+		dataType: 'script'
+	});
+});

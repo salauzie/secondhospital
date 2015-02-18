@@ -83,37 +83,50 @@ class PatientsController < ApplicationController
 	def wait_patient
  		set_patient
     @patient.wait!
-    redirect_to clinic_patients_path
+   #  redirect_to clinic_patients_path
+  	respond_to do |format|
+  		format.js
+  	end	
   end
 
   def checkup_patient
   	set_patient
     @patient.check_up!
-    redirect_to clinic_patients_path
+    respond_to do |format|
+  		format.js
+  	end
   end
 
   def xray_patient
   	set_patient
     @patient.x_ray!
-    redirect_to clinic_patients_path
+    respond_to do |format|
+  		format.js
+  	end
   end
 
   def surgery_patient
   	set_patient
     @patient.surge!
-    redirect_to clinic_patients_path
+    respond_to do |format|
+  		format.js
+  	end
   end
 
   def bills_patient
   	set_patient
     @patient.bills!
-    redirect_to clinic_patients_path
+    respond_to do |format|
+  		format.js
+  	end
   end
 
   def leave_patient
   	set_patient
     @patient.leave!
-    redirect_to clinic_patients_path
+    respond_to do |format|
+  		format.js
+  	end
   end
 
 def search_results

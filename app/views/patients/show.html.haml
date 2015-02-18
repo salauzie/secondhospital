@@ -16,39 +16,38 @@ First Name:
           Blood Type:
           \#{@patient.blood_type}
           %br
+            Doctors:
+            - @doctors.each do |doctor|
+              = doctor.name
+              %br
+            Medications:
+            %br
+              - @medications.each do |meds|
+                = meds.name
+                %br
+              %br
+                %br
+                  = link_to "Edit", edit_clinic_patient_path
+                  = link_to "Delete", clinic_patient_path, method: :delete
             Patient Status:
             \#{@patient.workflow_state}
-            %br
-              Doctors:
-              - @doctors.each do |doctor|
-                = doctor.name
-                %br
-              Medications:
-              %br
-                - @medications.each do |meds|
-                  = meds.name
-                  %br
-                %br
-                  %br
-                    = link_to "Edit", edit_clinic_patient_path
-                    = link_to "Delete", clinic_patient_path, method: :delete
+            - if @patient.waiting?
+              = link_to "Doctor Check-up", checkup_patient_clinic_patient_path, method: :patch
+              = link_to "X-Ray", xray_patient_clinic_patient_path, method: :patch
+              = link_to "Surgery", surgery_patient_clinic_patient_path, method: :patch
+              = link_to "Leaving", leave_patient_clinic_patient_path, method: :patch
+            - if @patient.checking_up?
+              = link_to "X-Ray", xray_patient_clinic_patient_path, method: :patch  
+              = link_to "Surgery", surgery_patient_clinic_patient_path, method: :patch
+              = link_to "Billing", bills_patient_clinic_patient_path, method: :patch
+              = link_to "Leaving", leave_patient_clinic_patient_path, method: :patch
+            - if @patient.x_raying?
+              = link_to "Surgery", surgery_patient_clinic_patient_path, method: :patch
+              = link_to "Billing", bills_patient_clinic_patient_path, method: :patch
+              = link_to "Leaving", leave_patient_clinic_patient_path, method: :patch
+            - if @patient.surgery?
+              = link_to "Billing", bills_patient_clinic_patient_path, method: :patch  
+            - if @patient.billing?
+              = link_to "Leaving", leave_patient_clinic_patient_path, method: :patch
 
-
-- if @patient.waiting?
-  = link_to "Doctor Check-up", checkup_patient_clinic_patient_path, method: :patch
-  = link_to "X-Ray", xray_patient_clinic_patient_path, method: :patch
-  = link_to "Surgery", surgery_patient_clinic_patient_path, method: :patch
-  = link_to "Leaving", leave_patient_clinic_patient_path, method: :patch
-- if @patient.checking_up?
-  = link_to "X-Ray", xray_patient_clinic_patient_path, method: :patch  
-  = link_to "Surgery", surgery_patient_clinic_patient_path, method: :patch
-  = link_to "Billing", bills_patient_clinic_patient_path, method: :patch
-  = link_to "Leaving", leave_patient_clinic_patient_path, method: :patch
-- if @patient.x_raying?
-  = link_to "Surgery", surgery_patient_clinic_patient_path, method: :patch
-  = link_to "Billing", bills_patient_clinic_patient_path, method: :patch
-  = link_to "Leaving", leave_patient_clinic_patient_path, method: :patch
-- if @patient.surgery?
-  = link_to "Billing", bills_patient_clinic_patient_path, method: :patch  
-- if @patient.billing?
-  = link_to "Leaving", leave_patient_clinic_patient_path, method: :patch                    
+                  
