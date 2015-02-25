@@ -12,7 +12,8 @@ workflow do
 		event :wait, :transitions_to => :waiting
 		event :check_up, :transitions_to => :checking_up
 		event :x_ray, :transitions_to => :x_raying
-		event :surgery, :transitions_to => :surged
+		event :surge, :transitions_to => :surgery
+		event :bills, :transitions_to => :billing
 		event :leave, :transitions_to => :leaving
 	end
 
