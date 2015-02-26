@@ -1,3 +1,6 @@
+.jumbotron.clinics.text-center
+  %h1 Clinics
+
 = form_tag clinics_path, method: :get, role: "search" do
   = text_field_tag 'q', params[:q], id: "srch-term", placeholder: "Search" 
   = submit_tag "Search"

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Patient, type: :model do
+describe 'Patient' do
 	subject do
 		Patient.new({
 			first_name: "sue",

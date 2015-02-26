@@ -1,19 +1,26 @@
-%h1 Meds
+.jumbotron.meds.text-center
+  %h1 Medications
+
 = form_tag medications_path, method: :get, role: "search" do
   = text_field_tag 'q', params[:q], id: "srch-term", placeholder: "Search" 
   = submit_tag "Search"
-- @medications.each do |f|
-  = f.name
-  %br/
-  = f.strength
-  %br/
-  = f.directions
-  %br/
-  = f.prescriber
-  %br/
-  = link_to "Edit", edit_medication_path(f)
-  = link_to "Delete", medication_path(f), method: :delete
-  %br/
-  %br/
+
+.container-fluid 
+  - @medications.each do |f|
+    .list
+    = f.name
+    %br/
+    = f.strength
+    %br/
+    = f.directions
+    %br/
+    = f.prescriber
+    %br/
+    = link_to "Edit", edit_medication_path(f)
+    = link_to "Delete", medication_path(f), method: :delete
+    %br
+    %br
+    .row
+
 = link_to "Home", root_path
 = link_to "Add Medication", new_medication_path

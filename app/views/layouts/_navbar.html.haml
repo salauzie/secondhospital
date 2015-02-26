@@ -1,10 +1,22 @@
-.container
-	.row
-		.col-lg-1
-			%ul.nav.nav-pills.nav-stacked
-				%li{class: active_link('home')}
-					= link_to "Home", root_path
-				%li{class: active_link('clinics')}
-					= link_to "Clinics", clinics_path
-				%li{class: active_link('doctors')}
-					= link_to "Doctors", doctors_path
+/ .container
+/ 	.col-lg-1
+/ 		%ul.nav
+/ 			%li{class: active_link('home')}
+/ 				= link_to "Home", root_path
+/ 			%li{class: active_link('clinics')}
+/ 				= link_to "Clinics", clinics_path
+/ 			%li{class: active_link('doctors')}
+/ 				= link_to "Doctors", doctors_path
+
+%nav.navbar.navbar-default.navbar-static-top
+	.container
+		%ul.nav.navbar-nav.navbar-left
+			%li{class: active_link('home')}
+				= link_to "Home", root_path
+			%li{class: active_link('clinics')}
+				= link_to "Clinics", clinics_path
+			%li{class: active_link('doctors')}
+				= link_to "Doctors", doctors_path	
+			%li{class: active_link('medications')}
+				= link_to "Medications", medications_path
+			
