@@ -5,9 +5,9 @@
   = text_field_tag 'q', params[:q], id: "srch-term", placeholder: "Search" 
   = submit_tag "Search"
 
-.container-fluid 
-  - @medications.each do |f|
-    .list
+
+- @medications.each do |f|
+  .col-sm-4
     = f.name
     %br/
     = f.strength
@@ -20,7 +20,7 @@
     = link_to "Delete", medication_path(f), method: :delete
     %br
     %br
-    .row
+
 
 = link_to "Home", root_path
 = link_to "Add Medication", new_medication_path
