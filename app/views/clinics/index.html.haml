@@ -6,9 +6,10 @@
   = submit_tag "Search"
 
 - @clinics.each do |f|
-  .col-sm-4
+  .col-sm-4.text-center
+    = image_tag f.photo
+    %br
     = link_to f.name, clinic_path(f)
     %br/
     %br/
-    = link_to "Home", root_path
-    = link_to "Add Clinic", new_clinic_path
+= link_to "Add Clinic", new_clinic_path   

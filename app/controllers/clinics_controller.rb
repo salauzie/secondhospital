@@ -47,7 +47,8 @@ private
 			:facility_type,
 			:address,
 			:city,
-			:state
+			:state,
+			:photo
 			)
 	end		
 end
