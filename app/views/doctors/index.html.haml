@@ -16,6 +16,8 @@
 %br
 - @doctors.each do |f|
   .col-sm-4
+    = image_tag f.photo
+    %br
     = f.name
     %br/
     = f.phone_number

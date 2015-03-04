@@ -21,16 +21,19 @@
   = f.select :blood_type, options_for_select(Patient::BLOOD_TYPE_OPTIONS, f.object.date_of_birth), include_blank: "--Choose option--"
   %br/
   %br/
-  %div Doctor:
-  - @doctors.each do |d|
-    = check_box_tag 'patient[doctor_ids][]', d.id, @patient.doctors.include?(d)
-    = d.name
+  %container
+    %div Doctor:
+    - @doctors.each do |d|
+      = check_box_tag 'patient[doctor_ids][]', d.id, @patient.doctors.include?(d)
+      = d.name
+      %br
   %br/
   %br/
   %div Medications:
   - @medications.each do |m|
     = check_box_tag 'patient[medication_ids][]', m.id, @patient.medications.include?(m)
     = m.name
+    %br
   %br/
   %br/
   = f.submit class: "button", disabled: "disabled"

@@ -42,6 +42,7 @@ private
 			:name,
 			:phone_number,
 			:specialty,
+			:photo,
 			doctor_ids: [],
 			clinic_ids: []
 			)
