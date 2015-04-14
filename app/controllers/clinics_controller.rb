@@ -1,4 +1,6 @@
 class ClinicsController < ApplicationController
+
+	before_action :authenticate_user!, except: [:index, :show]
 	def index
 		@clinics = Clinic.all.sort
 		@clinics = if !params[:q].blank?

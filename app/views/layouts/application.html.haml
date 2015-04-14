@@ -7,13 +7,17 @@
 = javascript_include_tag 'application', 'data-turbolinks-track' => true
 = csrf_meta_tags
 %body
+/ - if flash[:notice]
+/ 	%h3#notice= flash[:notice]
+/ - if flash[:error]
+/ 	%h3#error= flash[:error]
+
+= render 'layouts/navbar'	
 - if flash[:notice]
 	%h3#notice= flash[:notice]
 - if flash[:error]
 	%h3#error= flash[:error]
-	
-= render 'layouts/navbar'	
-- flash.each do |name, msg|
-	= content_tag(:div, msg, class: "alert alert-#{name}")
+/ - flash.each do |name, msg|
+/ 	= content_tag(:div, msg, class: "alert alert-#{name}")
 .body-content
 	= yield
