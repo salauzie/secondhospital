@@ -12,4 +12,5 @@
     = link_to f.name, clinic_path(f)
     %br/
     %br/
-= link_to "Add Clinic", new_clinic_path   
+= link_to "Add Clinic", new_clinic_path
+= will_paginate @clinics, renderer: BootstrapPagination::Rails 

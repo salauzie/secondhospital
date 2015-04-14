@@ -21,3 +21,5 @@
     %br/
   
 = link_to "Add Doctor", new_doctor_path
+%br
+= will_paginate @doctors, renderer: BootstrapPagination::Rails

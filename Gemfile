@@ -7,6 +7,8 @@ gem 'workflow'
 gem 'erb2haml'
 gem 'haml-rails'
 gem 'devise'
+gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate-bootstrap'
 # Use sqlite3 as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets

@@ -2,13 +2,13 @@ class ClinicsController < ApplicationController
 
 	before_action :authenticate_user!, except: [:index, :show]
 	def index
-		@clinics = Clinic.all.sort
+		@clinics = Clinic.all
 		@clinics = if !params[:q].blank?
       Clinic.where("name LIKE ?", "%#{params[:q]}%")
     else
       
       puts "Showing all Clinics"
-      Clinic.all
+      Clinic.all.paginate(:page => params[:page], :per_page => 30)
     end
 	end	
 

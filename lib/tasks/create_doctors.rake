@@ -4,7 +4,7 @@ task create_doctors: :environment do
 			name: "#{Faker::Name.name}",
 			phone_number: "#{Faker::PhoneNumber.phone_number}",
 			specialty: "Primary",
-			photo: "http://placekitten.com/g/300/200"
+			photo: "#{Faker::Avatar.image}"
 		})
 	end	
 end
