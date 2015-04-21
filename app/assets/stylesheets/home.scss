@@ -1,6 +1,21 @@
 body.homebody {
-	background-image: image-url("hospitalcover.jpg");
+	background-image: image-url("building.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+.btn {
+	color: grey;
+	background: #D8DAE6;
+	font-weight: bold;
+}
+
+nav.navbar.navbar-default.navbar-static-top {
+	background: #f0f2ff;
+	background-image: url(http://www.transparenttextures.com/patterns/45-degree-fabric-light.png);
+}
+
+nav.navbar.navbar-default.navbar-static-top a {
+	font-weight: bold;
 
 }
