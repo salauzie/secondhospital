@@ -1,13 +1,8 @@
 %body.homebody
+.container-one
 -if user_signed_in?
 
 -else
-%br
-%br
-%br
-%br
-%br
-%br
 	= link_to "Login", new_user_session_path, :class => "btn btn-default btn-lg"
 	= link_to "Sign up", new_user_registration_path, :class => "btn btn-default btn-lg"
 

@@ -56,5 +56,11 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'factory_girl_rails'
+  gem 'sqlite3'
+end  
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
