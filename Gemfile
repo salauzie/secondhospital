@@ -58,5 +58,9 @@ group :development, :test do
   gem 'chromedriver-helper'
   gem 'factory_girl_rails'
   
+end  
+
+group :production do
+  gem 'pg'
 end
 
