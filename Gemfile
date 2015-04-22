@@ -41,6 +41,7 @@ gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'sqlite3'
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -56,7 +57,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'factory_girl_rails'
-  gem 'sqlite3'
+  
 end  
 
 group :production do
