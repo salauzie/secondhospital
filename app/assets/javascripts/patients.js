@@ -34,7 +34,7 @@ $(document).on('click', '.waiting', function() {
 	var patient_id = $(this).attr(".patient-id")
 	$.ajax({
 		type: 'POST',
-		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/wait_patient'
+		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/wait_patient',
 		dataType: 'script'
 	});
 });
@@ -45,7 +45,7 @@ $(document).on('click', '.check-up', function() {
 	var patient_id = $(this).attr(".patient-id")
 	$.ajax({
 		type: 'POST',
-		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/checkup_patient'
+		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/checkup_patient',
 		dataType: 'script'
 	});
 });
@@ -56,7 +56,7 @@ $(document).on('click', '.x-ray', function() {
 	var patient_id = $(this).attr(".patient-id")
 	$.ajax({
 		type: 'POST',
-		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/xray_patient'
+		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/xray_patient',
 		dataType: 'script'
 	});
 });
@@ -67,7 +67,7 @@ $(document).on('click', '.surgery', function() {
 	var patient_id = $(this).attr(".patient-id")
 	$.ajax({
 		type: 'POST',
-		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/surgery_patient'
+		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/surgery_patient',
 		dataType: 'script'
 	});
 });
@@ -78,7 +78,7 @@ $(document).on('click', '.leaving', function() {
 	var patient_id = $(this).attr(".patient-id")
 	$.ajax({
 		type: 'POST',
-		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/leave_patient'
+		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/leave_patient',
 		dataType: 'script'
 	});
 });
@@ -89,7 +89,7 @@ $(document).on('click', '.billing', function() {
 	var patient_id = $(this).attr(".patient-id")
 	$.ajax({
 		type: 'POST',
-		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/bills_patient'
+		url: '/clinics/' + clinic_id + '/patients/' + patient_id, '/bills_patient',
 		dataType: 'script'
 	});
 });
