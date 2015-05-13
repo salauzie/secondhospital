@@ -4,7 +4,7 @@ class ClinicsController < ApplicationController
 	def index
 		@clinics = Clinic.all
 		@clinics = if !params[:q].blank?
-      Clinic.where("name LIKE ?", "%#{params[:q]}%")
+      Clinic.where("name LIKE ?", "%#{params[:q]}%").paginate(:page => params[:page], :per_page => 30)
     else
       
       puts "Showing all Clinics"
